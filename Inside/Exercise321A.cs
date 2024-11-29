@@ -27,7 +27,7 @@ public class Exercise321A : IExercise
             }
         }
 
-        public void ShowCount()
+        internal void ShowCount()
         {
             for (var i = 0; i < _range; i++)
             {

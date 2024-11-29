@@ -8,7 +8,8 @@ internal static class Program
         // exerciseToRun = new Exercise315A();
         // exerciseToRun = new Exercise315B();
         // exerciseToRun = new Exercise315C();
-        exerciseToRun = new Exercise321A();
+        // exerciseToRun = new Exercise321A();
+        exerciseToRun = new Exercise321B();
         
         exerciseToRun.Run();
     }

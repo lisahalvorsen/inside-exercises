@@ -4,33 +4,37 @@ public class Exercise321A : IExercise
 {
     public void Run()
     {
-        var charCounter = new CharCounter();
-        charCounter.AddNewText();
+        var counter = new CharCounter();
+        string text = "something";
+        while (!string.IsNullOrEmpty(text))
+        {
+            text = Console.ReadLine();
+            counter.AddText(text);
+            counter.ShowCount();
+        }
     }
 
     private class CharCounter
     {
         private static int _range = 250;
         private int[] _counts = new int[_range];
-        private string _text = "something";
-        
-        internal void AddNewText()
-        {
-            while (!string.IsNullOrWhiteSpace(_text))
-            {
-                _text = Console.ReadLine();
-                foreach (var character in _text ?? string.Empty)
-                {
-                    _counts[(int)character]++;
-                }
 
-                for (var i = 0; i < _range; i++)
+        internal void AddText(string text)
+        {
+            foreach (var character in text ?? string.Empty)
+            {
+                _counts[(int)character]++;
+            }
+        }
+
+        public void ShowCount()
+        {
+            for (var i = 0; i < _range; i++)
+            {
+                if (_counts[i] > 0)
                 {
-                    if (_counts[i] > 0)
-                    {
-                        var character = (char)i;
-                        Console.WriteLine(character + " - " + _counts[i]);
-                    }
+                    var character = (char)i;
+                    Console.WriteLine(character + " - " + _counts[i]);
                 }
             }
         }

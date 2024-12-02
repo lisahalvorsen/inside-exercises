@@ -12,8 +12,8 @@ public class Exercise321C : IExercise
             new TwentyKrCoin(11),
         };
 
-        var totalBalance = Wallet.CalculateBalance(wallet);
-        Wallet.ShowBalance(wallet);
-        Wallet.ShowTotalAmount(totalBalance);
+        var totalBalance = Wallet.CalculateTotalBalance(wallet);
+        Wallet.DisplayBalance(wallet);
+        Wallet.DisplayTotalAmount(totalBalance);
     }
 }

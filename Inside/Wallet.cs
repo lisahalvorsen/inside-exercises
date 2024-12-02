@@ -2,20 +2,20 @@ namespace Inside;
 
 public class Wallet
 {
-    public virtual int Value { get; set; }
-    public int Count { get; init; }
+    public virtual int Value { get; }
+    protected int Count { get; init; }
 
-    public static int CalculateBalance(Wallet[] wallet)
+    public static int CalculateTotalBalance(Wallet[] wallet)
     {
         return wallet?.Sum(coin => coin.Value * coin.Count) ?? 0;
     }
 
-    public static void ShowTotalAmount(int value)
+    public static void DisplayTotalAmount(int value)
     {
         Console.WriteLine($"Totalt har du {value} kr 💰");
     }
 
-    public static void ShowBalance(Wallet[] wallet)
+    public static void DisplayBalance(Wallet[] wallet)
     {
         if (wallet == null || wallet.Length == 0)
         {

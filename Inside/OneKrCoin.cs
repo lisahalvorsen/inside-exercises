@@ -2,7 +2,7 @@ namespace Inside;
 
 public class OneKrCoin : Wallet
 {
-    public override int Value { get; set; } = 1;
+    public override int Value => 1;
 
     public OneKrCoin(int count)
     {
